@@ -5,7 +5,7 @@ import UserList from './components/user-list/user-list.component';
 
 import './App.scss';
 
-// comment here
+// first comment here
 
 function App() {
   return (
