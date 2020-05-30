@@ -6,6 +6,7 @@ import UserList from './components/user-list/user-list.component';
 import './App.scss';
 
 // first comment here
+// second comment here
 
 function App() {
   return (
