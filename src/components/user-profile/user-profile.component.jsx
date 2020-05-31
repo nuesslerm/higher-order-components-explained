@@ -53,6 +53,6 @@ const UserProfile = ({ name, email, data }) => (
 );
 
 export default withData(
-  UserProfile,
-  'https://jsonplaceholder.typicode.com/posts'
+  UserProfile
+  // 'https://jsonplaceholder.typicode.com/posts'
 );
