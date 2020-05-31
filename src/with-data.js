@@ -57,13 +57,18 @@ const withData = (WrappedComponent) => {
     }
 
     render() {
+      // because we're not using the dataSource prop in the WrappedComponent
+      // we can actually strip it out of the otherProps that we're passing into
+      // the WrappedComponent
+      const { dataSource, ...otherProps } = this.props;
+
       return this.state.data.length < 1 ? (
         <h1>LOADING</h1>
       ) : (
         // we'll get access to the data in the WrappedComponent, because I am
         // passing it into the component, from the props that were determined
         // in the HOC above
-        <WrappedComponent data={this.state.data} {...this.props} />
+        <WrappedComponent data={this.state.data} {...otherProps} />
       );
     }
   }
