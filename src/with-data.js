@@ -34,7 +34,8 @@ import React from 'react';
 // //};
 /* #endregion */
 
-const withData = (WrappedComponent, dataSource) => {
+// const withData = (WrappedComponent, dataSource) => {
+const withData = (WrappedComponent) => {
   class WithData extends React.Component {
     constructor(props) {
       super(props);
@@ -46,7 +47,10 @@ const withData = (WrappedComponent, dataSource) => {
 
     componentDidMount() {
       setTimeout(() => {
-        fetch(dataSource)
+        // instead of usign dataSource as an argument in the withData HOC,
+        // we could pass in dataSource as a prop into the WrappedComponent
+        // and leverage dataSource from the props
+        fetch(this.props.dataSource)
           .then((res) => res.json())
           .then((data) => this.setState({ data: data.slice(0, 3) }));
       }, 1500);
